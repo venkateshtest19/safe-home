@@ -544,3 +544,55 @@ img { max-width: 100%; height: auto; }
   .product-price-tag { font-size: 2.2rem; }
   .features-list-box { padding: 20px; }
 }
+/* --- Brand Page Product Highlight --- */
+.brand-product-highlight {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 50px;
+  align-items: center;
+  background: var(--surface);
+  padding: 50px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  margin-top: 40px;
+}
+.brand-product-img {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 12px;
+}
+.brand-product-details h3 {
+  font-size: 2rem;
+  color: var(--secondary);
+  margin-bottom: 10px;
+}
+.brand-product-price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+.brand-product-features {
+  list-style: none;
+  margin-bottom: 30px;
+}
+.brand-product-features li {
+  padding: 8px 0;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-product-features li:before {
+  content: "✓";
+  color: var(--primary);
+  font-weight: 800;
+}
+
+@media (max-width: 768px) {
+  .brand-product-highlight { grid-template-columns: 1fr; padding: 30px; text-align: center; }
+  .brand-product-features li { justify-content: center; }
+}
