@@ -702,8 +702,8 @@ img { max-width: 100%; height: auto; }
 
 /* Norton Hero with Background Image */
 .norton-hero {
-  /* Desktop Image */
-  background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('../image/Norton_Home.png');
+  background-color: #0f172a; /* Fallback color */
+  background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('../image/Norton_Home.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -717,6 +717,7 @@ img { max-width: 100%; height: auto; }
   font-weight: 800;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  color: white;
 }
 
 .norton-hero p {
@@ -730,7 +731,6 @@ img { max-width: 100%; height: auto; }
 /* Mobile Override for Norton Hero */
 @media (max-width: 768px) {
   .norton-hero {
-    /* Mobile Image */
     background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('../image/Norton_Home_Mobile.png');
     padding: 80px 0;
   }
@@ -741,8 +741,8 @@ img { max-width: 100%; height: auto; }
 .btn-norton-hero {
   background-color: var(--primary);
   color: var(--secondary);
-  padding: 18px 35px; /* Larger padding */
-  font-size: 1.2rem; /* Larger text */
+  padding: 18px 35px;
+  font-size: 1.2rem;
   font-weight: 800;
   border-radius: 50px;
   white-space: nowrap; /* Forces text to stay on one line */
@@ -750,10 +750,12 @@ img { max-width: 100%; height: auto; }
   box-shadow: 0 4px 15px rgba(255, 186, 0, 0.4);
   transition: all 0.3s ease;
   border: 2px solid var(--primary);
+  text-decoration: none;
 }
 
 .btn-norton-hero:hover {
-  transform: scale(1.05); /* Slight zoom effect */
+  transform: scale(1.05);
   background-color: var(--primary-hover);
   box-shadow: 0 6px 20px rgba(255, 186, 0, 0.6);
+  color: var(--secondary);
 }
