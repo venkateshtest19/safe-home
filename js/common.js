@@ -47,3 +47,25 @@ function initMenuLogic() {
     }
   });
 }
+// FAQ Toggle Logic
+document.addEventListener("DOMContentLoaded", () => {
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+      // Close other open FAQs
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove('active');
+          otherItem.querySelector('.faq-question span').textContent = '+';
+        }
+      });
+      
+      // Toggle current FAQ
+      item.classList.toggle('active');
+      const icon = item.querySelector('.faq-question span');
+      icon.textContent = item.classList.contains('active') ? '-' : '+';
+    });
+  });
+});
