@@ -1,1 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Safe Home</title>
+    <meta name="description" content="Get genuine antivirus licenses from Safe Home. Instant delivery and 24/7 support.">
+    
+    <link rel="stylesheet" href="css/common.css">
+    <div id="head-tracking-container"></div>
+</head>
+<body>
 
+    <div id="header-container"></div>
+
+    <main id="product-main">
+        <!-- Product content will be injected here by JavaScript -->
+        <div class="container" style="padding: 100px 20px; text-align: center;">
+            <h2>Loading product details...</h2>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    <div id="body-tracking-container"></div>
+
+    <script src="js/products.js"></script>
+    <script src="js/common.js"></script>
+    
+    <script>
+        // Dynamic Product Loader
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            const product = products[productId];
+            const main = document.getElementById('product-main');
+
+            if (!product) {
+                main.innerHTML = `
+                    <section class="page-hero">
+                        <div class="container">
+                            <h1>Product Not Found</h1>
+                            <p>The product you're looking for doesn't exist.</p>
+                            <a href="shop.html" class="btn btn-primary" style="margin-top: 20px;">Back to Shop</a>
+                        </div>
+                    </section>
+                `;
+                return;
+            }
+
+            // Update page title
+            document.title = `${product.name} | Safe Home`;
+
+            // Build features list HTML
+            const featuresHTML = product.features.map(f => `<li>${f}</li>`).join('');
+            const whyBuyHTML = product.whyBuy.map(w => `<li>${w}</li>`).join('');
+
+            // Build related products (show 3 other products)
+            const allIds = Object.keys(products);
+            const relatedIds = allIds.filter(id => id !== productId).slice(0, 3);
+            const relatedHTML = relatedIds.map(id => {
+                const p = products[id];
+                return `
+                    <div class="product-card">
+                        <div class="product-brand">${p.brand}</div>
+                        <div class="product-name">${p.name}</div>
+                        <div class="product-price">${p.price}</div>
+                        <a href="product.html?id=${p.id}" class="btn btn-outline">View Details</a>
+                    </div>
+                `;
+            }).join('');
+
+            // Inject full product page
+            main.innerHTML = `
+                <!-- Breadcrumb -->
+                <div class="container" style="padding: 20px 20px 0;">
+                    <p style="color: var(--text-light); font-size: 0.9rem;">
+                        <a href="index.html">Home</a> / <a href="shop.html">Shop</a> / <span style="color: var(--secondary);">${product.name}</span>
+                    </p>
+                </div>
+
+                <!-- Product Hero -->
+                <section class="section">
+                    <div class="container">
+                        <div class="product-detail-grid">
+                            <div class="product-image-box">
+                                <img src="${product.image}" alt="${product.name}" class="product-detail-img">
+                            </div>
+                            <div class="product-info-box">
+                                <div class="product-brand-tag">${product.brand}</div>
+                                <h1 class="product-detail-title">${product.name}</h1>
+                                <p class="product-detail-desc">${product.shortDesc}</p>
+                                <div class="product-price-tag">${product.price}</div>
+                                <div class="product-meta">
+                                    <p><strong>License:</strong> ${product.license}</p>
+                                    <p><strong>Delivery:</strong> ${product.delivery}</p>
+                                </div>
+                                <a href="tel:1234567890" class="btn btn-primary btn-large">📞 Call Now to Purchase</a>
+                                <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 15px;">
+                                    Speak with our sales team to complete your purchase. 24/7 available.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Description -->
+                <section class="section" style="background-color: #f1f5f9;">
+                    <div class="container">
+                        <h2 class="section-title">Product Overview</h2>
+                        <p class="about-text">${product.description}</p>
+                    </div>
+                </section>
+
+                <!-- Features -->
+                <section class="section">
+                    <div class="container">
+                        <h2 class="section-title">Key Features</h2>
+                        <p class="section-subtitle">Everything included in your license.</p>
+                        <div class="features-list-box">
+                            ${featuresHTML}
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Why Buy -->
+                <section class="section" style="background-color: #f1f5f9;">
+                    <div class="container">
+                        <h2 class="section-title">Why Buy This Product?</h2>
+                        <div class="features-list-box">
+                            ${whyBuyHTML}
+                        </div>
+                    </div>
+                </section>
+
+                <!-- System Requirements -->
+                <section class="section">
+                    <div class="container">
+                        <h2 class="section-title">System Requirements</h2>
+                        <div class="requirements-box">
+                            <p>${product.requirements}</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA Section -->
+                <section class="cta-section">
+                    <div class="container">
+                        <h2>Ready to Get Protected?</h2>
+                        <p>Call our sales team now to purchase your license. Instant email delivery.</p>
+                        <a href="tel:1234567890" class="btn btn-primary btn-large">📞 Call Now: 1234567890</a>
+                    </div>
+                </section>
+
+                <!-- Related Products -->
+                <section class="section">
+                    <div class="container">
+                        <h2 class="section-title">Related Products</h2>
+                        <div class="products-grid">
+                            ${relatedHTML}
+                        </div>
+                    </div>
+                </section>
+            `;
+        });
+    </script>
+</body>
+</html>
