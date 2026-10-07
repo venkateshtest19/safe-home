@@ -163,14 +163,73 @@ img { max-width: 100%; height: auto; }
 .feature-card p { color: var(--text-light); }
 
 /* Footer */
-.site-footer { background-color: var(--secondary); color: #94a3b8; padding: 60px 0 20px; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-.footer-col h3 { color: white; font-size: 1.1rem; margin-bottom: 20px; }
-.footer-col ul li { margin-bottom: 10px; }
-.footer-col a:hover { color: var(--primary); }
-.disclaimer-text { font-size: 0.8rem; margin-top: 15px; opacity: 0.7; }
-.footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #334155; font-size: 0.9rem; }
+.site-footer { 
+  background-color: #f3f4f6; /* Light gray background */
+  color: #111827; /* Almost black text */
+  padding: 60px 0 20px; 
+}
 
+.footer-grid { 
+  display: grid; 
+  grid-template-columns: 2fr 1fr 1fr 1fr; 
+  gap: 40px; 
+  margin-bottom: 40px; 
+}
+
+.footer-col h3 { 
+  color: #000000; /* Pure black headings */
+  font-size: 1.1rem; 
+  margin-bottom: 20px; 
+  font-weight: 700;
+}
+
+.footer-col p {
+  color: #374151; /* Dark gray for paragraphs */
+  margin-bottom: 10px;
+}
+
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col a { color: #111827; } /* Black links */
+.footer-col a:hover { color: var(--primary-hover); font-weight: 600; } /* Yellow on hover */
+
+/* Disclaimer Box Styling */
+.footer-disclaimer {
+  background-color: #fffbeb; /* Very soft yellow/amber background to match theme */
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #1f2937;
+}
+
+.footer-disclaimer h4 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #000000;
+}
+
+.footer-disclaimer p { 
+  margin-bottom: 12px; 
+  line-height: 1.6;
+}
+.footer-disclaimer p:last-child { 
+  margin-bottom: 0; 
+}
+
+.footer-bottom { 
+  text-align: center; 
+  padding-top: 20px; 
+  border-top: 1px solid #d1d5db; 
+  font-size: 0.9rem; 
+  color: #4b5563; 
+}
+
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}
 @media (max-width: 768px) {
   .hero h1 { font-size: 2.2rem; }
   .footer-grid { grid-template-columns: 1fr; }
