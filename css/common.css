@@ -339,4 +339,12 @@ img { max-width: 100%; height: auto; }
 @media (max-width: 768px) {
   .hero h1 { font-size: 2.2rem; }
   .footer-grid { grid-template-columns: 1fr; }
+    /* Fix Stats Grid for Mobile */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr); /* Forces 2 items per row */
+    gap: 20px;
+  }
+  .stat-item h3 {
+    font-size: 2rem; /* Makes numbers slightly smaller to fit nicely */
+  }
 }
