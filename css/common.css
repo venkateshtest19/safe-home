@@ -596,3 +596,78 @@ img { max-width: 100%; height: auto; }
   .brand-product-highlight { grid-template-columns: 1fr; padding: 30px; text-align: center; }
   .brand-product-features li { justify-content: center; }
 }
+/* --- Contact Page Specific Styles --- */
+
+/* Contact Info Cards */
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+.contact-card {
+  background: var(--surface);
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  transition: transform 0.3s ease;
+}
+.contact-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  background: #fffbeb; /* Light yellow */
+  color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 0 auto 20px;
+}
+.contact-card h3 {
+  font-size: 1.25rem;
+  color: var(--secondary);
+  margin-bottom: 10px;
+}
+.contact-card p {
+  color: var(--text-light);
+  margin-bottom: 5px;
+}
+.contact-card a {
+  color: var(--secondary);
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+.contact-card a:hover {
+  color: var(--primary);
+}
+
+/* Contact Form */
+.contact-form-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--surface);
+  padding: 50px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--secondary);
+  font-size: 0.95rem;
+}
+.form-control {
+  width
