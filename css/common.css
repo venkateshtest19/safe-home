@@ -698,3 +698,62 @@ img { max-width: 100%; height: auto; }
   margin-bottom: 10px;
   color: var(--text-dark);
 }
+/* --- Norton Page Specific Styles --- */
+
+/* Norton Hero with Background Image */
+.norton-hero {
+  /* Desktop Image */
+  background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('../image/Norton_Home.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 120px 0;
+  text-align: center;
+}
+
+.norton-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.norton-hero p {
+  font-size: 1.25rem;
+  color: #f8fafc;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Mobile Override for Norton Hero */
+@media (max-width: 768px) {
+  .norton-hero {
+    /* Mobile Image */
+    background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('../image/Norton_Home_Mobile.png');
+    padding: 80px 0;
+  }
+  .norton-hero h1 { font-size: 2.2rem; }
+}
+
+/* The "Awesome" Call Button */
+.btn-norton-hero {
+  background-color: var(--primary);
+  color: var(--secondary);
+  padding: 18px 35px; /* Larger padding */
+  font-size: 1.2rem; /* Larger text */
+  font-weight: 800;
+  border-radius: 50px;
+  white-space: nowrap; /* Forces text to stay on one line */
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(255, 186, 0, 0.4);
+  transition: all 0.3s ease;
+  border: 2px solid var(--primary);
+}
+
+.btn-norton-hero:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  background-color: var(--primary-hover);
+  box-shadow: 0 6px 20px rgba(255, 186, 0, 0.6);
+}
