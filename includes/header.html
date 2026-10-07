@@ -1,5 +1,6 @@
 <!-- includes/header.html -->
 <header class="site-header">
+  <!-- Top Bar (Hidden on Mobile via CSS) -->
   <div class="top-bar">
     <div class="container">
       <span>📍 334 E 25th St, New York, NY 10010</span>
@@ -9,20 +10,17 @@
   
   <nav class="main-nav">
     <div class="container nav-container">
+      <!-- Logo -->
       <a href="index.html" class="logo">
-        <!-- Replace with your actual logo image later -->
-        <div class="logo-icon">SH</div> 
-        <span class="logo-text">Safe<span class="text-primary">Home</span></span>
+        <img src="image/SafeHomeLogo.png" alt="Safe Home Logo" class="logo-img">
       </a>
 
-      <button class="mobile-toggle" id="mobileToggle">☰</button>
-
+      <!-- Navigation Links -->
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="shop.html">Shop</a></li>
         <li><a href="about.html">About</a></li>
         
-        <!-- Solutions Dropdown -->
         <li class="dropdown">
           <a href="#" class="dropdown-toggle">Solutions ▾</a>
           <div class="dropdown-menu">
@@ -34,11 +32,25 @@
 
         <li><a href="contact.html">Contact</a></li>
         
-        <!-- Call Now Button in Menu -->
-        <li class="mobile-call-btn">
-          <a href="tel:1234567890" class="btn btn-primary">Call Now</a>
+        <!-- Desktop Call Button -->
+        <li class="desktop-cta">
+          <a href="tel:1234567890" class="btn btn-primary">Talk to Sales</a>
+        </li>
+
+        <!-- Mobile Only Info (Address inside menu) -->
+        <li class="mobile-only-info">
+          <p>📍 334 E 25th St, New York, NY 10010</p>
+          <p> 24/7 Available: 1234567890</p>
+          <p>✉️ safehome@atomicmail.io</p>
         </li>
       </ul>
+
+      <!-- Mobile Actions (Call Button + Toggle) -->
+      <div class="mobile-header-actions">
+        <a href="tel:1234567890" class="mobile-call-btn">📞 Call</a>
+        <button class="mobile-toggle" id="mobileToggle">☰</button>
+      </div>
+
     </div>
   </nav>
 </header>
