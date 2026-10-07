@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Antivirus Licenses | Safe Home</title>
+    <meta name="description" content="Browse our complete catalog of genuine antivirus licenses. Norton, McAfee, Bitdefender, Quick Heal and more.">
+    
+    <link rel="stylesheet" href="css/common.css">
+    <div id="head-tracking-container"></div>
+</head>
+<body>
 
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>Shop Antivirus Licenses</h1>
+                <p>Browse our complete catalog of 100% genuine antivirus solutions. Instant email delivery.</p>
+            </div>
+        </section>
+
+        <!-- Products Grid -->
+        <section class="section">
+            <div class="container">
+                <div class="products-grid" id="shop-products-grid">
+                    <!-- Products will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Buy From Us -->
+        <section class="section" style="background-color: #f1f5f9;">
+            <div class="container">
+                <h2 class="section-title">Why Buy From Safe Home?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>100% Genuine</h3>
+                        <p>Authorized reseller with licenses sourced directly from official distributors.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Instant Delivery</h3>
+                        <p>Receive your license key via email within minutes of purchase.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎧</div>
+                        <h3>24/7 Support</h3>
+                        <p>Our New York team is available around the clock to help you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Need Help Choosing?</h2>
+                <p>Call our experts and we'll recommend the perfect solution for your needs.</p>
+                <a href="tel:1234567890" class="btn btn-primary btn-large">📞 Call Now</a>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+    <div id="body-tracking-container"></div>
+
+    <script src="js/products.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        // Load all products into shop grid
+        document.addEventListener("DOMContentLoaded", () => {
+            const grid = document.getElementById('shop-products-grid');
+            if (!grid) return;
+
+            const allProducts = Object.values(products);
+            grid.innerHTML = allProducts.map(p => `
+                <div class="product-card">
+                    <div class="product-brand">${p.brand}</div>
+                    <div class="product-name">${p.name}</div>
+                    <div class="product-price">${p.price}</div>
+                    <a href="product.html?id=${p.id}" class="btn btn-outline">View Details</a>
+                </div>
+            `).join('');
+        });
+    </script>
+</body>
+</html>
