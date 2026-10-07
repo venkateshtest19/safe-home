@@ -671,3 +671,30 @@ img { max-width: 100%; height: auto; }
 }
 .form-control {
   width
+/* --- Legal Page Text Styles --- */
+.legal-content {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 1.8;
+  color: var(--text-dark);
+  font-size: 1.05rem;
+}
+.legal-content h3 {
+  font-size: 1.4rem;
+  color: var(--secondary);
+  margin-top: 35px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+.legal-content p {
+  margin-bottom: 20px;
+}
+.legal-content ul {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+.legal-content li {
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
