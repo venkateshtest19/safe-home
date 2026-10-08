@@ -28,26 +28,35 @@ img { max-width: 100%; height: auto; }
 .btn-outline { background-color: transparent; border: 2px solid var(--primary); color: var(--primary); }
 .btn-outline:hover { background-color: var(--primary); color: var(--secondary); }
 
-/* Header & Top Bar */
+/* Header & Top Bar - FIXED HEADER STYLES */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: var(--surface);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Push main content down so it isn't hidden behind fixed header */
+main {
+  padding-top: 115px; /* Space for Desktop Header (top bar + nav) */
+}
+
 .top-bar { background-color: var(--secondary); color: #cbd5e1; font-size: 0.875rem; padding: 10px 0; }
 .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
 .top-bar a { color: var(--primary); font-weight: 600; }
 
-/* Find this section in your CSS and replace the .main-nav block with this: */
-
 .main-nav { 
   background-color: var(--surface); 
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
-  position: sticky; 
-  top: 0; 
-  z-index: 9999; /* Very high number to ensure it stays on top of everything */
   width: 100%;
 }
 .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; position: relative; }
 
 /* Logo Styling */
 .logo { display: flex; align-items: center; }
-.logo-img { height: 45px; width: auto; } /* Adjust height as needed */
+.logo-img { height: 45px; width: auto; }
 .logo-img-footer { height: 50px; width: auto; margin-bottom: 15px; }
 
 /* Desktop Nav */
@@ -69,6 +78,11 @@ img { max-width: 100%; height: auto; }
 
 /* Mobile Responsiveness */
 @media (max-width: 900px) {
+  /* Adjust main padding for mobile (no top bar) */
+  main {
+    padding-top: 75px; /* Smaller space for Mobile Header */
+  }
+  
   /* Hide Top Bar on Mobile */
   .top-bar { display: none; }
   
@@ -670,7 +684,35 @@ img { max-width: 100%; height: auto; }
   font-size: 0.95rem;
 }
 .form-control {
-  width
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background-color: #f8fafc;
+}
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255, 186, 0, 0.2);
+  background-color: #fff;
+}
+textarea.form-control {
+  resize: vertical;
+  min-height: 150px;
+}
+.form-submit-btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .contact-form-container { padding: 30px 20px; }
+}
 /* --- Legal Page Text Styles --- */
 .legal-content {
   max-width: 850px;
