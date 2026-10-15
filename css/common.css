@@ -801,3 +801,17 @@ textarea.form-control {
   box-shadow: 0 6px 20px rgba(255, 186, 0, 0.6);
   color: var(--secondary);
 }
+
+/* Price Disclaimer Note */
+.price-note {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-style: italic;
+  margin-top: -15px;
+  margin-bottom: 25px;
+}
+/* Mobile adjustment for dual buttons */
+@media (max-width: 768px) {
+  .product-actions { flex-direction: column; gap: 15px !important; }
+  .product-actions .btn { width: 100%; margin-left: 0 !important; }
+}
