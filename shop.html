@@ -83,6 +83,8 @@ s0.parentNode.insertBefore(s1,s0);
 
     <script src="js/products.js"></script>
     <script src="js/common.js"></script>
+        <script src="js/products.js"></script>
+    <script src="js/common.js"></script>
     <script>
         // Load all products into shop grid
         document.addEventListener("DOMContentLoaded", () => {
@@ -94,11 +96,17 @@ s0.parentNode.insertBefore(s1,s0);
                 <div class="product-card">
                     <div class="product-brand">${p.brand}</div>
                     <div class="product-name">${p.name}</div>
-                    <div class="product-price">${p.price}</div>
-                    <a href="product.html?id=${p.id}" class="btn btn-outline">View Details</a>
+                    <div class="product-price">${p.displayPrice}</div>
+                    <p style="font-size: 0.75rem; color: var(--text-light); margin-bottom: 15px; font-style: italic;">${p.priceNote}</p>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                        <a href="${p.buyLink}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 10px 15px; font-size: 0.9rem;">Buy on Best Buy</a>
+                        <a href="product.html?id=${p.id}" class="btn btn-outline" style="padding: 10px 15px; font-size: 0.9rem;">Details</a>
+                    </div>
                 </div>
             `).join('');
         });
     </script>
+</body>
+</html>
 </body>
 </html>
