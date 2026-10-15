@@ -1,219 +1,235 @@
 // js/products.js
 
 const products = {
-  "quickheal": {
-    id: "quickheal",
-    brand: "Quick Heal",
-    name: "Quick Heal AntiVirus Pro",
-    price: "$18",
-    image: "image/QuickHeal.png",
-    shortDesc: "Reliable, lightweight antivirus protection for everyday users.",
-    description: "Quick Heal AntiVirus Pro provides robust, real-time protection against viruses, malware, ransomware, and online threats. Designed for users who want strong security without slowing down their PC, it's the perfect balance of performance and protection.",
-    features: [
-      "Real-time virus and malware protection",
-      "Ransomware shield to protect important files",
-      "Safe browsing and phishing protection",
-      "Low system impact – runs smoothly in background",
-      "Automatic updates for latest threat definitions",
-      "Email and network threat scanning"
-    ],
-    whyBuy: [
-      "Affordable entry-level protection for home users",
-      "Trusted Indian cybersecurity brand with global presence",
-      "Simple, clean interface – no technical knowledge needed",
-      "Excellent detection rates for common threats"
-    ],
-    requirements: "Windows 10/11 (32-bit & 64-bit), 1GB RAM, 1.5GB free disk space",
-    license: "1 User, 1 Year License Key",
-    delivery: "Instant Email Delivery"
-  },
-  "mcafee": {
-    id: "mcafee",
+  "mcafee-total": {
+    id: "mcafee-total",
     brand: "McAfee",
-    name: "McAfee AntiVirus 1 User 1 Year",
-    price: "$19",
-    image: "image/McAfee AntiVirus.png",
-    shortDesc: "Industry-leading protection from one of the most trusted names in cybersecurity.",
-    description: "McAfee AntiVirus delivers comprehensive protection against viruses, spyware, ransomware, and other online threats. With its powerful real-time scanning and web protection features, your PC stays safe while you browse, shop, and bank online.",
+    name: "McAfee Total Protection (1-Device) with Scam Protection",
+    basePrice: 23.99, // Best Buy base price (fluctuates)
+    displayPrice: "Approx. $22.79 - $25.19",
+    priceNote: "Actual price varies on Best Buy. Click 'Buy on Best Buy' for current pricing.",
+    image: "image/McAfee Total Protection 1-Device Antivirus Software with Scam Protection 1-Year Subscription with Auto-Renewal Windows Mac OS Chrome Apple iOS Android Digital.png",
+    shortDesc: "Award-winning antivirus and internet security for 1 device with auto-renewal.",
+    description: "Protect your digital life with McAfee Total Protection. This 1-device, 1-year subscription provides award-winning antivirus protection against malware, viruses, spyware, and ransomware. It includes a firewall, safe browsing features, and 24/7 customer support to keep your Windows, Mac, Chrome, iOS, or Android device secure.",
     features: [
-      "100% virus protection guarantee",
-      "Real-time threat detection and removal",
-      "Web advisor for safe browsing",
-      "Firewall protection against hackers",
-      "Password manager included",
-      "PC optimization tools for better performance"
+      "Award-winning antivirus & real-time threat protection",
+      "Safe browsing: Blocks dangerous and malicious websites",
+      "Firewall: Monitors and controls network traffic",
+      "Device security against unauthorized access",
+      "24/7 customer support included",
+      "1-Year Subscription with Auto-Renewal"
     ],
     whyBuy: [
-      "Globally recognized and trusted brand",
-      "Excellent ransomware protection",
-      "Includes bonus tools like password manager",
-      "Great value for single-user protection"
+      "Comprehensive protection for all major operating systems",
+      "Trusted global cybersecurity brand",
+      "Seamless digital delivery and activation"
     ],
-    requirements: "Windows 10/11, macOS 10.15+, 2GB RAM, 1.5GB free disk space",
-    license: "1 User, 1 Year License Key",
-    delivery: "Instant Email Delivery"
+    requirements: "Windows, Mac OS, Chrome, Apple iOS, Android",
+    license: "1 Device, 1 Year Subscription",
+    delivery: "Digital Code via Best Buy",
+    buyLink: "https://www.bestbuy.com/product/mcafee-total-protection-1-device-antivirus-software-with-scam-protection-1-year-subscription-with-auto-renewal-windows-mac-os-chrome-apple-ios-android-digital/JXKFJ26RH3?partner=yourfirm&partner_id=PF-1024&utm_source=yourfirm-website&utm_medium=referral"
   },
-  "bitdefender": {
-    id: "bitdefender",
-    brand: "Bitdefender",
-    name: "Bitdefender Antivirus Plus",
-    price: "$19",
-    image: "image/Bitdefender Antivirus Plus.png",
-    shortDesc: "Award-winning protection with minimal impact on system performance.",
-    description: "Bitdefender Antivirus Plus consistently ranks among the top antivirus solutions worldwide. It offers multi-layer ransomware protection, advanced threat defense, and privacy features – all while keeping your PC running at full speed.",
+
+  "mcafee-antivirus": {
+    id: "mcafee-antivirus",
+    brand: "McAfee",
+    name: "McAfee AntiVirus (1-Device) Internet Security Software",
+    basePrice: 23.99,
+    displayPrice: "Approx. $22.79 - $25.19",
+    priceNote: "Actual price varies on Best Buy. Click 'Buy on Best Buy' for current pricing.",
+    image: "image/McAfee AntiVirus 1-Device Antivirus Internet Security Software 1-Year Subscription with Auto-Renewal Windows Digital.png",
+    shortDesc: "Essential antivirus and internet security software for 1 Windows device.",
+    description: "Keep your Windows PC safe with McAfee AntiVirus. This 1-year subscription offers robust, real-time protection against the latest malware, viruses, and ransomware. It features safe browsing warnings and a built-in firewall to monitor network traffic, ensuring your personal data stays secure.",
     features: [
-      "Multi-layer ransomware protection",
-      "Advanced threat defense with behavioral detection",
-      "Wi-Fi security advisor",
-      "Vulnerability scanner for outdated software",
-      "Anti-phishing and anti-fraud protection",
-      "Bitdefender VPN (200MB/day included)"
+      "Real-time protection against viruses and malware",
+      "Safe browsing warnings for harmful links",
+      "Built-in firewall for network security",
+      "Helps prevent unauthorized data breaches",
+      "24/7 customer support",
+      "1-Year Subscription with Auto-Renewal"
     ],
     whyBuy: [
-      "Consistently #1 rated by independent testing labs",
-      "Extremely low impact on PC performance",
-      "Includes free VPN for basic privacy",
-      "Excellent value for premium protection"
+      "Lightweight and easy to install on Windows",
+      "Reliable, real-time scanning without slowing down your PC",
+      "Great value for essential, everyday protection"
     ],
-    requirements: "Windows 10/11, 2GB RAM, 2.5GB free disk space",
-    license: "1 User, 1 Year License Key",
-    delivery: "Instant Email Delivery"
+    requirements: "Windows",
+    license: "1 Device, 1 Year Subscription",
+    delivery: "Digital Code via Best Buy",
+    buyLink: "https://www.bestbuy.com/product/mcafee-antivirus-1-device-antivirus-internet-security-software-1-year-subscription-with-auto-renewal-windows-digital/JXKFJ26PCJ?partner=yourfirm&partner_id=PF-1024&utm_source=yourfirm-website&utm_medium=referral"
   },
+
   "norton-plus": {
     id: "norton-plus",
     brand: "Norton",
-    name: "Norton AntiVirus Plus",
-    price: "$20",
-    image: "image/Norton AntiVirus Plus.webp",
-    shortDesc: "Essential antivirus protection with cloud backup from Norton.",
-    description: "Norton AntiVirus Plus provides powerful antivirus protection along with 2GB of secure cloud backup for your important files. It blocks viruses, malware, ransomware, and other online threats before they can harm your PC.",
+    name: "Norton AntiVirus Plus (1 Device) with Scam Protection",
+    basePrice: 24.99,
+    displayPrice: "Approx. $23.74 - $26.24",
+    priceNote: "Actual price varies on Best Buy. Click 'Buy on Best Buy' for current pricing.",
+    image: "image/Norton AntiVirus Plus 1 Device Antivirus Software Scam Protection Smart Firewall PC Cloud Backup 1 Year Subscription Android Apple iOS Mac OS Windows Digital.webp",
+    shortDesc: "Advanced antivirus, smart firewall, and 2GB PC cloud backup for 1 device.",
+    description: "Norton AntiVirus Plus delivers powerful protection against viruses, malware, and ransomware without slowing down your device. It includes a Smart Firewall, PC Cloud Backup (2GB), and a Password Manager to keep your credentials safe across Windows, Mac, iOS, and Android.",
     features: [
-      "Powerful antivirus and malware protection",
-      "2GB PC cloud backup for important files",
-      "Smart firewall for network protection",
-      "Email spam protection",
-      "SONAR behavioral protection technology",
-      "Password manager for secure logins"
+      "Advanced antivirus and malware protection",
+      "Smart Firewall to block unauthorized traffic",
+      "2GB secure PC cloud backup (Windows)",
+      "Password manager for secure logins",
+      "Scam protection and safe browsing",
+      "1-Year Subscription with Auto-Renewal"
     ],
     whyBuy: [
-      "Includes valuable cloud backup feature",
       "Norton's legendary Virus Protection Promise",
-      "Great for users who want backup + antivirus in one",
-      "Trusted by millions worldwide"
+      "Includes valuable cloud backup and password management",
+      "Multi-platform compatibility"
     ],
-    requirements: "Windows 10/11, 2GB RAM, 2GB free disk space",
-    license: "1 User, 1 Year License Key",
-    delivery: "Instant Email Delivery"
+    requirements: "Android, Apple iOS, Mac OS, Windows",
+    license: "1 Device, 1 Year Subscription",
+    delivery: "Digital Code via Best Buy",
+    buyLink: "https://www.bestbuy.com/product/norton-antivirus-plus-1-device-antivirus-software-scam-protection-smart-firewall-pc-cloud-backup-1-year-subscription-android-apple-ios-mac-os-windows-digital/J78X33QVVT?partner=yourfirm&partner_id=PF-1024&utm_source=yourfirm-website&utm_medium=referral"
   },
-  "norton-deluxe": {
-    id: "norton-deluxe",
-    brand: "Norton",
-    name: "Norton 360 Deluxe 2026",
-    price: "$29.99",
-    image: "image/Norton 360 Deluxe 2026.webp",
-    shortDesc: "Complete protection for multiple devices with advanced privacy tools.",
-    description: "Norton 360 Deluxe 2026 is our most popular all-in-one security suite. It protects up to 5 devices with advanced antivirus, a secure VPN, dark web monitoring, and parental controls – everything you need for complete digital safety.",
+
+  "bitdefender-plus-multi": {
+    id: "bitdefender-plus-multi",
+    brand: "Bitdefender",
+    name: "Bitdefender Antivirus Plus (1-Device) Multi-Platform",
+    basePrice: 29.99,
+    displayPrice: "Approx. $28.49 - $31.49",
+    priceNote: "Actual price varies on Best Buy. Click 'Buy on Best Buy' for current pricing.",
+    image: "image/Bitdefender Antivirus Plus 1-Device 1-Year Subscription Windows Apple iOS Mac OS Android Linux Digital.png",
+    shortDesc: "Multi-platform antivirus protection for Windows, Mac, iOS, Android, and Linux.",
+    description: "Bitdefender Antivirus Plus is a multi-platform solution that protects your devices with industry-leading technologies. Whether you use a Windows laptop, Mac, Android phone, or iPhone, you get robust protection with virtually no impact on your system's performance.",
     features: [
-      "Protection for up to 5 devices (PC, Mac, Android, iOS)",
-      "Secure VPN with no data cap for private browsing",
-      "Dark web monitoring powered by LifeLock",
-      "Parental controls to keep kids safe online",
-      "PC Cloud Backup (50GB)",
-      "Smart firewall and email spam protection",
-      "Password manager for all your accounts"
+      "Multi-platform protection (Windows, Mac, iOS, Android, Linux)",
+      "Advanced threat defense and real-time protection",
+      "Phishing and fraud protection",
+      "Parental controls included",
+      "Minimal impact on system performance",
+      "1-Year Subscription"
     ],
     whyBuy: [
-      "Best value for multi-device households",
-      "Includes premium VPN with unlimited data",
-      "Dark web monitoring alerts you to data breaches",
-      "2026 edition with latest threat protection tech"
+      "Consistently top-rated by independent testing labs",
+      "Covers all your different devices with one solution",
+      "Excellent performance and low system resource usage"
     ],
-    requirements: "Windows 10/11, macOS 10.15+, Android 8+, iOS 14+",
-    license: "5 Devices, 1 Year License Key",
-    delivery: "Instant Email Delivery"
+    requirements: "Windows, Apple iOS, Mac OS, Android, Linux",
+    license: "1 Device, 1 Year Subscription",
+    delivery: "Digital Code via Best Buy",
+    buyLink: "https://www.bestbuy.com/product/bitdefender-antivirus-plus-1-device-1-year-windows-apple-ios-mac-os-android-linux-digital/J3LXGJL763?partner=yourfirm&partner_id=PF-1024&utm_source=yourfirm-website&utm_medium=referral"
   },
-  "norton-advanced": {
-    id: "norton-advanced",
-    brand: "Norton",
-    name: "Norton 360 Advanced",
-    price: "$19.99",
-    image: "image/Norton 360 Advanced.webp",
-    shortDesc: "Advanced security suite with identity protection for the whole family.",
-    description: "Norton 360 Advanced takes security further with identity monitoring, credit monitoring, and advanced parental controls. Perfect for families who want comprehensive protection across all devices and online activities.",
+
+  "bitdefender-plus-windows": {
+    id: "bitdefender-plus-windows",
+    brand: "Bitdefender",
+    name: "Bitdefender Antivirus Plus (1-Device) Windows",
+    basePrice: 29.99,
+    displayPrice: "Approx. $28.49 - $31.49",
+    priceNote: "Actual price varies on Best Buy. Click 'Buy on Best Buy' for current pricing.",
+    image: "image/Bitdefender Antivirus Plus 1-Device 1-Year Subscription Windows.png",
+    shortDesc: "Dedicated, high-performance antivirus protection for Windows PCs.",
+    description: "Designed specifically for Windows, Bitdefender Antivirus Plus provides comprehensive, real-time protection against online threats. It features multi-layer ransomware protection, a vulnerability scanner, and a built-in password manager to keep your digital life secure.",
     features: [
-      "Protection for up to 10 devices",
-      "Identity monitoring and alerts",
-      "Credit monitoring and alerts",
-      "Advanced parental controls with location tracking",
-      "Secure VPN with no data cap",
-      "PC Cloud Backup (50GB)",
-      "Dark web monitoring"
+      "Multi-layer ransomware protection",
+      "Advanced threat defense with behavioral detection",
+      "Vulnerability scanner for outdated software",
+      "Anti-phishing and anti-fraud protection",
+      "Wi-Fi security advisor",
+      "1-Year Subscription"
     ],
     whyBuy: [
-      "Covers up to 10 devices – perfect for large families",
-      "Includes identity and credit monitoring",
-      "Advanced parental controls with GPS tracking",
-      "Excellent value for comprehensive family protection"
+      "Optimized specifically for Windows performance",
+      "Award-winning detection rates",
+      "Includes a free VPN (200MB/day) for basic privacy"
     ],
-    requirements: "Windows 10/11, macOS 10.15+, Android 8+, iOS 14+",
-    license: "10 Devices, 1 Year License Key",
-    delivery: "Instant Email Delivery"
+    requirements: "Windows",
+    license: "1 Device, 1 Year Subscription",
+    delivery: "Digital Code via Best Buy",
+    buyLink: "https://www.bestbuy.com/product/bitdefender-antivirus-plus-1-device-1-year-subscription-windows/J3LXGJGFW2?partner=yourfirm&partner_id=PF-1024&utm_source=yourfirm-website&utm_medium=referral"
   },
+
+  "norton-360-standard": {
+    id: "norton-360-standard",
+    brand: "Norton",
+    name: "Norton 360 Standard (1 Device) with VPN & Dark Web Monitoring",
+    basePrice: 69.99,
+    displayPrice: "Approx. $66.49 - $73.49",
+    priceNote: "Actual price varies on Best Buy. Click 'Buy on Best Buy' for current pricing.",
+    image: "image/Norton 360 Standard 1 Device Antivirus Internet Security Scam Protection VPN Dark Web Monitoring 1 Year Subscription Android Apple iOS Mac OS Windows Digital.webp",
+    shortDesc: "Complete internet security with VPN, Dark Web Monitoring, and 10GB cloud backup.",
+    description: "Norton 360 Standard provides comprehensive, real-time protection against malware and viruses. It goes beyond basic antivirus by including a top-performing VPN for private browsing, Dark Web Monitoring to alert you of data breaches, and 10GB of secure PC cloud backup.",
+    features: [
+      "Advanced AI Scam Protection",
+      "Real-time threat protection (malware, ransomware, viruses)",
+      "Dark Web Monitoring",
+      "Top-performing VPN for secure browsing",
+      "10GB secure PC cloud backup (Windows)",
+      "Password manager and Smart Firewall"
+    ],
+    whyBuy: [
+      "All-in-one security suite for a single device",
+      "Includes premium VPN and Dark Web Monitoring",
+      "Peace of mind with cloud backup for important files"
+",
+    requirements: "Android, Apple iOS, Mac OS, Windows",
+    license: "1 Device, 1 Year Subscription",
+    delivery: "Digital Code via Best Buy",
+    buyLink: "https://www.bestbuy.com/product/norton-360-standard-1-device-antivirus-internet-security-scam-protection-vpn-dark-web-monitoring-1-year-subscription-android-apple-ios-mac-os-windows-digital/J78X33H77L?partner=yourfirm&partner_id=PF-1024&utm_source=yourfirm-website&utm_medium=referral"
+  },
+
+  "norton-360-mobile": {
+    id: "norton-360-mobile",
+    brand: "Norton",
+    name: "Norton 360 Plus for Mobile (1 Device)",
+    basePrice: 29.99,
+    displayPrice: "Approx. $28.49 - $31.49",
+    priceNote: "Actual price varies on Best Buy. Click 'Buy on Best Buy' for current pricing.",
+    image: "image/Norton 360 Plus for Mobile 1-Device Scam Protection Secure VPN Dark Web Monitoring 1-Year Subscription Android Apple iOS Digital.webp",
+    shortDesc: "All-in-one mobile protection with advanced scam detection and secure VPN.",
+    description: "Protect your mobile life with Norton 360 Plus for Mobile. This unified app provides advanced scam protection for emails, texts, and calls, alongside a top-performing VPN and Dark Web Monitoring to keep your personal information safe on the go.",
+    features: [
+      "Scam Protection Pro (AI-powered detection for calls, texts, emails)",
+      "Safe Call: Automatically blocks and labels scam calls",
+      "Top-performing VPN with bank-grade encryption",
+      "Dark Web Monitoring",
+      "App Advisor to scan for malware and privacy leaks",
+      "Password manager"
+    ],
+    whyBuy: [
+      "Specifically designed for mobile threats (iOS and Android)",
+      "AI-powered assistant for cyber safety questions",
+      "Protects your identity and data on public Wi-Fi"
+    ],
+    requirements: "Android, Apple iOS",
+    license: "1 Device, 1 Year Subscription",
+    delivery: "Digital Code via Best Buy",
+    buyLink: "https://www.bestbuy.com/product/norton-360-plus-for-mobile-1-device-scam-protection-secure-vpn-dark-web-monitoring-1-year-subscription-android-apple-ios-digital/J78X33TLSW?partner=yourfirm&partner_id=PF-1024&utm_source=yourfirm-website&utm_medium=referral"
+  },
+
   "norton-antitrack": {
     id: "norton-antitrack",
     brand: "Norton",
-    name: "Norton AntiTrack",
-    price: "$39.99",
-    image: "image/Norton AntiTrack.webp",
-    shortDesc: "Block online trackers and protect your privacy while browsing.",
-    description: "Norton AntiTrack stops advertisers, data brokers, and websites from tracking your online activity. It masks your digital fingerprint, blocks tracking cookies, and helps you browse the web privately without targeted ads following you around.",
+    name: "Norton AntiTrack for Blocking Trackers and Protecting Privacy",
+    basePrice: 29.99,
+    displayPrice: "Approx. $28.49 - $31.49",
+    priceNote: "Actual price varies on Best Buy. Click 'Buy on Best Buy' for current pricing.",
+    image: "image/Norton AntiTrack For Blocking Trackers and Protecting Privacy Online Mac OS Windows Digital.webp",
+    shortDesc: "Minimize your digital footprint and stop intrusive online tracking.",
+    description: "Norton AntiTrack helps you stay private online by disguising your digital footprint. It goes beyond standard private browsing or VPNs by actively blocking trackers before pages load, preventing companies from profiling your online behavior.",
     features: [
-      "Blocks 2000+ tracking technologies",
-      "Masks your digital fingerprint",
-      "Stops targeted advertising",
-      "Protects against data broker profiling",
-      "Works with all major browsers",
-      "Real-time tracking alerts",
-      "Privacy dashboard to see who's blocked"
+      "Anti-Fingerprinting: Masks unique identifiers",
+      "Tracker & Cookie Blocking for faster, private browsing",
+      "Tracking Dashboard: See who is trying to track you",
+      "Browse without interruption or speed loss",
+      "Works seamlessly alongside your existing antivirus",
+      "1-Year Subscription with Auto-Renewal"
     ],
     whyBuy: [
-      "Essential for anyone concerned about online privacy",
-      "Stops advertisers from building profiles on you",
-      "Works silently in the background",
-      "Complements your antivirus for complete protection"
+      "Essential for anyone concerned about online privacy and data brokers",
+      "Prevents targeted advertising and profiling",
+      "Does not break websites or slow down browsing"
     ],
-    requirements: "Windows 10/11, macOS 10.14+, Chrome, Firefox, Edge, Safari",
-    license: "1 User, 1 Year License Key",
-    delivery: "Instant Email Delivery"
-  },
-  "norton-lifelock": {
-    id: "norton-lifelock",
-    brand: "Norton",
-    name: "Norton LifeLock Ultimate Plus",
-    price: "$42.99",
-    image: "image/Norton LifeLock Ultimate Plus.webp",
-    shortDesc: "The ultimate protection combining antivirus with identity theft protection.",
-    description: "Norton LifeLock Ultimate Plus is the most comprehensive protection available. It combines Norton's award-winning antivirus with LifeLock's identity theft protection, including $1M in stolen funds reimbursement, credit monitoring, and dark web surveillance.",
-    features: [
-      "Full Norton 360 Advanced security suite",
-      "LifeLock identity theft protection",
-      "$1,000,000 stolen funds reimbursement",
-      "Credit monitoring and alerts",
-      "Dark web monitoring for personal info",
-      "Social Security number alerts",
-      "Bank and credit card activity alerts",
-      "Court record monitoring",
-      "Protection for up to 10 devices"
-    ],
-    whyBuy: [
-      "The most complete protection package available",
-      "$1M reimbursement guarantee for stolen funds",
-      "Combines antivirus + identity theft in one solution",
-      "Ideal for high-risk individuals and families",
-      "Peace of mind with comprehensive monitoring"
-    ],
-    requirements: "Windows 10/11, macOS 10.15+, Android 8+, iOS 14+",
-    license: "1 User, 1 Year (10 Devices)",
-    delivery: "Instant Email Delivery"
+    requirements: "Mac OS, Windows",
+    license: "1 Device, 1 Year Subscription",
+    delivery: "Digital Code via Best Buy",
+    buyLink: "https://www.bestbuy.com/product/norton-antitrack-for-blocking-trackers-and-protecting-privacy-online-mac-os-windows-digital/J78X33H4VT?partner=yourfirm&partner_id=PF-1024&utm_source=yourfirm-website&utm_medium=referral"
   }
 };
