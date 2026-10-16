@@ -47,43 +47,31 @@ function initMenuLogic() {
     }
   });
 }
-// FAQ Toggle Logic
+
+// --- Unified FAQ Toggle Logic ---
 document.addEventListener("DOMContentLoaded", () => {
   const faqItems = document.querySelectorAll('.faq-item');
   
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
-    question.addEventListener('click', () => {
-      // Close other open FAQs
-      faqItems.forEach(otherItem => {
-        if (otherItem !== item) {
-          otherItem.classList.remove('active');
-          otherItem.querySelector('.faq-question span').textContent = '+';
+    if (question) {
+      question.addEventListener('click', () => {
+        // Close other open FAQs for a cleaner look
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item && otherItem.classList.contains('active')) {
+            otherItem.classList.remove('active');
+            const otherIcon = otherItem.querySelector('.faq-question span');
+            if (otherIcon) otherIcon.textContent = '+';
+          }
+        });
+        
+        // Toggle current FAQ
+        item.classList.toggle('active');
+        const icon = item.querySelector('.faq-question span');
+        if (icon) {
+          icon.textContent = item.classList.contains('active') ? '-' : '+';
         }
       });
-      
-      // Toggle current FAQ
-      item.classList.toggle('active');
-      const icon = item.querySelector('.faq-question span');
-      icon.textContent = item.classList.contains('active') ? '-' : '+';
-    });
+    }
   });
-});
-// --- FAQ Toggle Logic ---
-document.addEventListener("DOMContentLoaded", function() {
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(item => {
-        item.addEventListener('click', function() {
-            const parent = this.parentElement;
-            // Toggle active class
-            parent.classList.toggle('active');
-            // Change +/- icon
-            const span = this.querySelector('span');
-            if (parent.classList.contains('active')) {
-                span.textContent = '-';
-            } else {
-                span.textContent = '+';
-            }
-        });
-    });
 });
