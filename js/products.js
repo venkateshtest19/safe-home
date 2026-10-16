@@ -8,8 +8,7 @@ const products = {
     basePrice: 23.99,
     displayPrice: "Approx. $22.79 - $25.19",
     priceNote: "Actual price varies on Best Buy. Click 'Buy Now' for current pricing.",
-    image: "image/McAfee - Total Protection (1-Device) Antivirus Software with Scam Protection (1-Year Subscription with Auto-Renewal) - Windows, Mac OS, Chrome, Apple iOS, Android [Digital].webp",
-    shortDesc: "Award-winning antivirus and internet security for 1 device with auto-renewal.",
+    image: "image/Norton%20-%20AntiVirus%20Plus%20(1%20Device)%20Antivirus%20Software%20+%20Scam%20Protection%20+%20Smart%20Firewall%20+%20PC%20Cloud%20Backup%20(1%20Year%20Subscription)%20-%20Android,%20Apple%20iOS,%20Mac%20OS,%20Windows%20[Digital].webp",shortDesc: "Award-winning antivirus and internet security for 1 device with auto-renewal.",
     description: "Protect your digital life with McAfee Total Protection. This 1-device, 1-year subscription provides award-winning antivirus protection against malware, viruses, spyware, and ransomware. It includes a firewall, safe browsing features, and 24/7 customer support to keep your Windows, Mac, Chrome, iOS, or Android device secure.",
     features: [
       "Award-winning antivirus & real-time threat protection",
@@ -153,9 +152,7 @@ const products = {
     basePrice: 69.99,
     displayPrice: "Approx. $66.49 - $73.49",
     priceNote: "Actual price varies on Best Buy. Click 'Buy Now' for current pricing.",
-    image: "image/Norton - 360 Standard (1 Device) Antivirus Internet Security + Scam Protection + VPN + Dark Web Monitoring (1 Year Subscription) - Android, Apple iOS, Mac OS, Windows [Digital].webp",
-    shortDesc: "Complete internet security with VPN, Dark Web Monitoring, and 10GB cloud backup.",
-    description: "Norton 360 Standard provides comprehensive, real-time protection against malware and viruses. It goes beyond basic antivirus by including a top-performing VPN for private browsing, Dark Web Monitoring to alert you of data breaches, and 10GB of secure PC cloud backup.",
+    image: "image/Norton%20-%20360%20Standard%20(1%20Device)%20Antivirus%20Internet%20Security%20+%20Scam%20Protection%20+%20VPN%20+%20Dark%20Web%20Monitoring%20(1%20Year%20Subscription)%20-%20Android,%20Apple%20iOS,%20Mac%20OS,%20Windows%20[Digital].webp",description: "Norton 360 Standard provides comprehensive, real-time protection against malware and viruses. It goes beyond basic antivirus by including a top-performing VPN for private browsing, Dark Web Monitoring to alert you of data breaches, and 10GB of secure PC cloud backup.",
     features: [
       "Advanced AI Scam Protection",
       "Real-time threat protection (malware, ransomware, viruses)",
@@ -182,8 +179,7 @@ const products = {
     basePrice: 29.99,
     displayPrice: "Approx. $28.49 - $31.49",
     priceNote: "Actual price varies on Best Buy. Click 'Buy Now' for current pricing.",
-    image: "image/Norton - 360 Plus for Mobile (1 Device) Scam Protection + Secure VPN + Dark Web Monitoring (1 Year Subscription) - Android, Apple iOS [Digital].webp",
-    shortDesc: "All-in-one mobile protection with advanced scam detection and secure VPN.",
+    image: "image/Norton%20-%20360%20Plus%20for%20Mobile%20(1%20Device)%20Scam%20Protection%20+%20Secure%20VPN%20+%20Dark%20Web%20Monitoring%20(1%20Year%20Subscription)%20-%20Android,%20Apple%20iOS%20[Digital].webp",shortDesc: "All-in-one mobile protection with advanced scam detection and secure VPN.",
     description: "Protect your mobile life with Norton 360 Plus for Mobile. This unified app provides advanced scam protection for emails, texts, and calls, alongside a top-performing VPN and Dark Web Monitoring to keep your personal information safe on the go.",
     features: [
       "Scam Protection Pro (AI-powered detection for calls, texts, emails)",
