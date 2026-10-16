@@ -35,11 +35,10 @@
                 <h1>Welcome to Safe Home</h1>
                 <p>Your trusted partner for genuine antivirus solutions and 24/7 customer care.</p>
                 
-                <!-- Updated Button Container for Side-by-Side Layout -->
-                <div class="hero-buttons-container" style="margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <!-- Updated Buttons: Call Us Now first, both yellow, side-by-side -->
+                <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="tel:1234567890" class="btn btn-primary btn-large">Call Us Now</a>
                     <a href="shop.html" class="btn btn-primary btn-large">View Products</a>
-                    <!-- Changed outline color to dark blue so it's visible on white background -->
-                    <a href="tel:1234567890" class="btn btn-outline btn-large" style="border-color: var(--secondary); color: var(--secondary);">Call Us Now</a>
                 </div>
             </div>
         </section>
@@ -166,7 +165,7 @@
                         <p>Need help choosing the right product? Call our team anytime. We guide you step-by-step until you are fully protected.</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🤝</div>
+                        <div class="feature-icon"></div>
                         <h3>Customer Advocacy</h3>
                         <p>If you have an unsatisfactory experience, Safe Home stands by you. We will work directly with Best Buy to ensure your issue is resolved.</p>
                     </div>
@@ -174,7 +173,7 @@
             </div>
         </section>
 
-        <!-- FAQ Section (Expanded & Fixed) -->
+        <!-- FAQ Section -->
         <section class="section">
             <div class="container">
                 <h2 class="section-title">Frequently Asked Questions</h2>
@@ -191,17 +190,14 @@
                         <div class="faq-question">What if I have an issue with my purchase? <span>+</span></div>
                         <div class="faq-answer">Safe Home provides comprehensive post-purchase advocacy. If you experience any issues, contact us immediately. We will actively advocate on your behalf and guide you through Best Buy's resolution process to ensure a successful outcome.</div>
                     </div>
-                    <!-- New FAQ 1 -->
                     <div class="faq-item">
                         <div class="faq-question">Do I need to pay Safe Home directly? <span>+</span></div>
                         <div class="faq-answer">No. All payments are processed securely by Best Buy. You will check out on BestBuy.com using their secure payment gateway. Safe Home never handles your credit card information.</div>
                     </div>
-                    <!-- New FAQ 2 -->
                     <div class="faq-item">
                         <div class="faq-question">How quickly will I receive my license key? <span>+</span></div>
                         <div class="faq-answer">Once your purchase is complete on Best Buy, the digital license key and download instructions are typically emailed to you instantly or within a few minutes.</div>
                     </div>
-                    <!-- New FAQ 3 -->
                     <div class="faq-item">
                         <div class="faq-question">Can I use these licenses on multiple devices? <span>+</span></div>
                         <div class="faq-answer">The products currently listed on our site are primarily 1-Device licenses. Please check the "Details" page of each product to see exactly which operating systems (Windows, Mac, Android, etc.) are supported.</div>
@@ -224,26 +220,6 @@
     <div id="body-tracking-container"></div>
 
     <script src="js/common.js"></script>
-    
-    <!-- FAQ Toggle Script (Robust Version) -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            faqQuestions.forEach(item => {
-                item.addEventListener('click', function() {
-                    const parent = this.parentElement;
-                    // Toggle active class
-                    parent.classList.toggle('active');
-                    // Change +/- icon
-                    const span = this.querySelector('span');
-                    if (parent.classList.contains('active')) {
-                        span.textContent = '-';
-                    } else {
-                        span.textContent = '+';
-                    }
-                });
-            });
-        });
-    </script>
+    <!-- Note: FAQ script has been moved to js/common.js to fix the clicking issue -->
 </body>
 </html>
