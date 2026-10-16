@@ -69,3 +69,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+// --- FAQ Toggle Logic ---
+document.addEventListener("DOMContentLoaded", function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(item => {
+        item.addEventListener('click', function() {
+            const parent = this.parentElement;
+            // Toggle active class
+            parent.classList.toggle('active');
+            // Change +/- icon
+            const span = this.querySelector('span');
+            if (parent.classList.contains('active')) {
+                span.textContent = '-';
+            } else {
+                span.textContent = '+';
+            }
+        });
+    });
+});
