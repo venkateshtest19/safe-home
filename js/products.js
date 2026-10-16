@@ -65,7 +65,7 @@ const products = {
     basePrice: 24.99,
     displayPrice: "Approx. $23.74 - $26.24",
     priceNote: "Actual price varies on Best Buy. Click 'Buy Now' for current pricing.",
-    image: "image/Norton - AntiVirus Plus (1 Device) Antivirus Software + Scam Protection + Smart Firewall + PC Cloud Backup (1 Year Subscription) - Android, Apple iOS, Mac OS, Windows [Digital].webp",
+    image: "image/norton-plus.webp",
     shortDesc: "Advanced antivirus, smart firewall, and 2GB PC cloud backup for 1 device.",
     description: "Norton AntiVirus Plus delivers powerful protection against viruses, malware, and ransomware without slowing down your device. It includes a Smart Firewall, PC Cloud Backup (2GB), and a Password Manager to keep your credentials safe across Windows, Mac, iOS, and Android.",
     features: [
@@ -152,7 +152,7 @@ const products = {
     basePrice: 69.99,
     displayPrice: "Approx. $66.49 - $73.49",
     priceNote: "Actual price varies on Best Buy. Click 'Buy Now' for current pricing.",
-    image: "image/Norton%20-%20360%20Standard%20(1%20Device)%20Antivirus%20Internet%20Security%20+%20Scam%20Protection%20+%20VPN%20+%20Dark%20Web%20Monitoring%20(1%20Year%20Subscription)%20-%20Android,%20Apple%20iOS,%20Mac%20OS,%20Windows%20[Digital].webp",description: "Norton 360 Standard provides comprehensive, real-time protection against malware and viruses. It goes beyond basic antivirus by including a top-performing VPN for private browsing, Dark Web Monitoring to alert you of data breaches, and 10GB of secure PC cloud backup.",
+    image: "image/norton-360-standard.webp",
     features: [
       "Advanced AI Scam Protection",
       "Real-time threat protection (malware, ransomware, viruses)",
@@ -179,7 +179,7 @@ const products = {
     basePrice: 29.99,
     displayPrice: "Approx. $28.49 - $31.49",
     priceNote: "Actual price varies on Best Buy. Click 'Buy Now' for current pricing.",
-    image: "image/Norton%20-%20360%20Plus%20for%20Mobile%20(1%20Device)%20Scam%20Protection%20+%20Secure%20VPN%20+%20Dark%20Web%20Monitoring%20(1%20Year%20Subscription)%20-%20Android,%20Apple%20iOS%20[Digital].webp",shortDesc: "All-in-one mobile protection with advanced scam detection and secure VPN.",
+    image: "image/norton-360-mobile.webp",
     description: "Protect your mobile life with Norton 360 Plus for Mobile. This unified app provides advanced scam protection for emails, texts, and calls, alongside a top-performing VPN and Dark Web Monitoring to keep your personal information safe on the go.",
     features: [
       "Scam Protection Pro (AI-powered detection for calls, texts, emails)",
