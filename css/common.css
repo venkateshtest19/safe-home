@@ -154,7 +154,7 @@ main {
 
 /* Hero Section - Full Width with Dark Overlay */
 .hero {
-  background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('../image/Home_Hero.png');
+  background: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.5)), url('../image/Home_Hero.png');
   background-size: cover; /* Full width/height coverage */
   background-position: center;
   background-repeat: no-repeat;
