@@ -812,3 +812,57 @@ textarea.form-control {
   .product-actions { flex-direction: column; gap: 15px !important; }
   .product-actions .btn { width: 100%; margin-left: 0 !important; }
 }
+/* --- Mobile Sticky Call Button --- */
+.mobile-sticky-call-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9998; /* High z-index to stay above content, just below chat widget */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none; /* Prevents clicking when invisible */
+  display: none; /* Hidden on desktop by default */
+}
+
+.mobile-sticky-call-btn.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto; /* Enables clicking when visible */
+}
+
+.mobile-sticky-call-btn a {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffba00; /* Safe Home Brand Yellow */
+  color: #0f172a; /* Safe Home Brand Dark Blue */
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+}
+
+.sticky-label {
+  font-size: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+.sticky-number {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* Show ONLY on mobile screens */
+@media (max-width: 768px) {
+  .mobile-sticky-call-btn {
+    display: block; 
+  }
+}
