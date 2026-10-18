@@ -75,3 +75,45 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+// ==========================================
+// --- Mobile Sticky Call Button Settings ---
+// ==========================================
+const stickyCallSettings = {
+    isEnabled: true,       // Set to 'false' to completely hide the button
+    scrollThreshold: 10    // Set from 0 to 100. 
+                           // 0 = Always visible. 20 = Appears after 20% scroll.
+};
+
+function initStickyCallButton() {
+    const btn = document.getElementById('mobile-sticky-call-btn');
+    if (!btn) return;
+
+    // 1. If disabled in settings, remove it completely
+    if (!stickyCallSettings.isEnabled) {
+        btn.remove();
+        return;
+    }
+
+    // 2. If threshold is 0, make it always visible immediately
+    if (stickyCallSettings.scrollThreshold === 0) {
+        btn.classList.add('visible');
+        return;
+    }
+
+    // 3. Scroll listener for custom threshold
+    window.addEventListener('scroll', () => {
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (scrollHeight <= 0) return; // Prevent math errors on very short pages
+        
+        const scrollPercent = (window.scrollY / scrollHeight) * 100;
+        
+        if (scrollPercent >= stickyCallSettings.scrollThreshold) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    });
+}
+
+// Initialize the button when the page loads
+document.addEventListener("DOMContentLoaded", initStickyCallButton);
