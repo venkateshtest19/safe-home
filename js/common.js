@@ -14,11 +14,16 @@ async function loadComponent(elementId, filePath) {
   }
 }
 
+// Load all components first, THEN initialize scripts that depend on them
 document.addEventListener("DOMContentLoaded", async () => {
   await loadComponent('head-tracking-container', 'includes/head-tracking.html');
   await loadComponent('body-tracking-container', 'includes/body-tracking.html');
   await loadComponent('header-container', 'includes/header.html');
   await loadComponent('footer-container', 'includes/footer.html');
+  
+  // Initialize features ONLY after the footer (and button) are in the DOM
+  initFAQLogic();
+  initStickyCallButton();
 });
 
 function initMenuLogic() {
@@ -26,7 +31,6 @@ function initMenuLogic() {
   const navLinks = document.getElementById('navLinks');
   const dropdowns = document.querySelectorAll('.dropdown');
 
-  // Toggle Main Menu
   if (toggleBtn && navLinks) {
     toggleBtn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -34,7 +38,6 @@ function initMenuLogic() {
     });
   }
 
-  // Toggle Dropdowns on Mobile
   dropdowns.forEach(dropdown => {
     const toggle = dropdown.querySelector('.dropdown-toggle');
     if(toggle) {
@@ -48,15 +51,12 @@ function initMenuLogic() {
   });
 }
 
-// --- Unified FAQ Toggle Logic ---
-document.addEventListener("DOMContentLoaded", () => {
+function initFAQLogic() {
   const faqItems = document.querySelectorAll('.faq-item');
-  
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
     if (question) {
       question.addEventListener('click', () => {
-        // Close other open FAQs for a cleaner look
         faqItems.forEach(otherItem => {
           if (otherItem !== item && otherItem.classList.contains('active')) {
             otherItem.classList.remove('active');
@@ -64,8 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (otherIcon) otherIcon.textContent = '+';
           }
         });
-        
-        // Toggle current FAQ
         item.classList.toggle('active');
         const icon = item.querySelector('.faq-question span');
         if (icon) {
@@ -74,19 +72,23 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
-});
+}
+
 // ==========================================
 // --- Mobile Sticky Call Button Settings ---
 // ==========================================
 const stickyCallSettings = {
     isEnabled: true,       // Set to 'false' to completely hide the button
     scrollThreshold: 10    // Set from 0 to 100. 
-                           // 0 = Always visible. 20 = Appears after 20% scroll.
+                           // 0 = Always visible. 10 = Appears after 10% scroll.
 };
 
 function initStickyCallButton() {
     const btn = document.getElementById('mobile-sticky-call-btn');
-    if (!btn) return;
+    if (!btn) {
+        console.warn("Sticky call button not found in DOM.");
+        return;
+    }
 
     // 1. If disabled in settings, remove it completely
     if (!stickyCallSettings.isEnabled) {
@@ -103,7 +105,7 @@ function initStickyCallButton() {
     // 3. Scroll listener for custom threshold
     window.addEventListener('scroll', () => {
         const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-        if (scrollHeight <= 0) return; // Prevent math errors on very short pages
+        if (scrollHeight <= 0) return; 
         
         const scrollPercent = (window.scrollY / scrollHeight) * 100;
         
@@ -114,6 +116,3 @@ function initStickyCallButton() {
         }
     });
 }
-
-// Initialize the button when the page loads
-document.addEventListener("DOMContentLoaded", initStickyCallButton);
