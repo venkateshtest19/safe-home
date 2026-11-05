@@ -2,30 +2,22 @@
 <!-- includes/header.html -->
 <header class="site-header">
   <!-- Top Bar (Hidden on Mobile via CSS) -->
-
+  
   <nav class="main-nav">
     <div class="container nav-container">
-
       <!-- Logo -->
-      <a href="index.html" class="logo"
-         aria-label="Safe Home - Homepage">
-        <img
-          src="image/SafeHomeLogo.png"
-          alt="Safe Home Logo"
-          class="logo-img">
+      <a href="index.html" class="logo">
+        <img src="image/SafeHomeLogo.png" alt="Safe Home Logo" class="logo-img">
       </a>
 
       <!-- Navigation Links -->
       <ul class="nav-links" id="navLinks">
-
         <li><a href="index.html">Home</a></li>
         <li><a href="shop.html">Shop</a></li>
         <li><a href="about.html">About</a></li>
-
+        
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle">
-            Solutions ▾
-          </a>
+          <a href="#" class="dropdown-toggle">Solutions ▾</a>
           <div class="dropdown-menu">
             <a href="norton.html">Norton</a>
             <a href="mcafee.html">McAfee</a>
@@ -34,47 +26,24 @@
         </li>
 
         <li><a href="contact.html">Contact</a></li>
-
-        <!-- Desktop Contact Button -->
+        
+        <!-- Desktop Call Button -->
         <li class="desktop-cta">
-          <a href="contact.html" class="btn btn-primary">
-            Contact Us
-          </a>
+          <a href="tel:1234567890" class="btn btn-primary">Call Now</a>
         </li>
 
-        <!-- Mobile Only Information -->
+        <!-- Mobile Only Info (Address inside menu) -->
         <li class="mobile-only-info">
-          <p>
-            Independent Antivirus Buying Guides
-          </p>
-          <p>
-            Compare products and explore your options.
-          </p>
-          <p>
-            ✉️
-            <a href="mailto:safehome@atomicmail.io">
-              safehome@atomicmail.io
-            </a>
-          </p>
+          <p>📍 2520 S Jackson St, Seattle, WA 98144</p>
+          <p>📞 24/7 Available: 1234567890</p>
+          <p>✉️ safehome@atomicmail.io</p>
         </li>
-
       </ul>
 
-      <!-- Mobile Actions -->
+      <!-- Mobile Actions (Call Button + Toggle) -->
       <div class="mobile-header-actions">
-        <a href="contact.html" class="mobile-call-btn">
-          Contact Us
-        </a>
-
-        <button
-          class="mobile-toggle"
-          id="mobileToggle"
-          type="button"
-          aria-label="Toggle navigation menu"
-          aria-controls="navLinks"
-          aria-expanded="false">
-          ☰
-        </button>
+        <a href="tel:1234567890" class="mobile-call-btn">Call Now</a>
+        <button class="mobile-toggle" id="mobileToggle">☰</button>
       </div>
 
     </div>
