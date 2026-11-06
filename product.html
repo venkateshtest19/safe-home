@@ -1,197 +1,1011 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Product Details | Safe Home</title>
-    <meta name="description" content="Get genuine antivirus licenses from Safe Home via our secure Best Buy partnership.">
-    
+
+    <meta name="description"
+          id="page-description"
+          content="Compare antivirus and online security products with independent pre-purchase guidance from Safe Home.">
+
     <link rel="stylesheet" href="css/common.css">
-    <div id="head-tracking-container"></div>
+
+    <style>
+        .product-page-note {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--text-light);
+            margin-top: 16px;
+        }
+
+        .product-page-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .product-page-actions .btn {
+            text-align: center;
+        }
+
+        .product-page-guide {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .product-page-guide p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .product-page-guide h3 {
+            margin: 25px 0 12px;
+        }
+
+        .product-page-disclosure {
+            padding: 20px;
+            margin-top: 25px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            line-height: 1.7;
+        }
+
+        .product-page-disclosure p + p {
+            margin-top: 12px;
+        }
+
+        .product-page-related-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .product-page-related-actions .btn {
+            padding: 10px 15px;
+            font-size: 0.9rem;
+        }
+
+        .product-page-related-description {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin: 12px 0;
+        }
+
+        .product-page-image-placeholder {
+            min-height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            background: #f1f5f9;
+            border-radius: 12px;
+            color: #334155;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .product-page-breadcrumb {
+            padding: 20px 20px 0;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .product-page-breadcrumb a {
+            text-decoration: none;
+        }
+
+        .product-page-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .product-page-faq {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .product-page-faq details {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 18px 0;
+        }
+
+        .product-page-faq summary {
+            cursor: pointer;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .product-page-faq details p {
+            margin-top: 12px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .product-page-actions .btn {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-    <!-- Tawk.to Live Chat Script -->
+    <!-- ORIGINAL TAWK.TO CHAT SCRIPT - PRESERVED -->
+
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/6ac628831e620734c017d03f/1k4b0sh3c';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),
+                s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/6ac628831e620734c017d03f/1k4b0sh3c';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
     </script>
     <!--End of Tawk.to Script-->
 
+    <div id="head-tracking-container"></div>
     <div id="header-container"></div>
 
     <main id="product-main">
-        <!-- Product content will be injected here by JavaScript -->
-        <div class="container" style="padding: 150px 20px; text-align: center;">
-            <h2>Loading product details...</h2>
+        <div class="container"
+             style="padding:100px 20px;text-align:center;">
+            <h1>Loading product details...</h1>
         </div>
     </main>
 
+    <!-- Shared footer contains existing mobile sticky call button -->
     <div id="footer-container"></div>
     <div id="body-tracking-container"></div>
 
     <script src="js/products.js"></script>
     <script src="js/common.js"></script>
-    
-    <script>
-        // Dynamic Product Loader
-        document.addEventListener("DOMContentLoaded", () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const productId = urlParams.get('id');
-            const product = products[productId];
-            const main = document.getElementById('product-main');
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const main = document.getElementById("product-main");
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get("id");
+
+            const catalog =
+                typeof products !== "undefined" ? products : {};
+
+            const product = Object.prototype.hasOwnProperty.call(
+                catalog,
+                productId
+            ) ? catalog[productId] : null;
+
+            // Escape dynamic catalog text before inserting into HTML.
+            function escapeHTML(value) {
+                return String(value == null ? "" : value)
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#39;");
+            }
+
+            function safeProductLink(value) {
+                try {
+                    const url = new URL(value);
+
+                    if (
+                        url.protocol === "https:" &&
+                        (
+                            url.hostname === "bestbuy.com" ||
+                            url.hostname === "www.bestbuy.com"
+                        )
+                    ) {
+                        return escapeHTML(url.href);
+                    }
+                } catch (error) {
+                    // Invalid links are not rendered as purchase links.
+                }
+
+                return "";
+            }
+
+            function productDetailLink(id) {
+                return "product.html?id=" +
+                    encodeURIComponent(String(id));
+            }
+
+            function makeList(items) {
+                if (!Array.isArray(items)) return "";
+
+                return items.map(item =>
+                    `<li>${escapeHTML(item)}</li>`
+                ).join("");
+            }
+
+            function productImage(p) {
+                const name = escapeHTML(p.name || "Security product");
+                const brand = escapeHTML(p.brand || "Security software");
+
+                if (!p.image) {
+                    return `
+                        <div class="product-page-image-placeholder"
+                             role="img"
+                             aria-label="Product image not available">
+                            ${brand}
+                        </div>
+                    `;
+                }
+
+                return `
+                    <img
+                        src="${escapeHTML(p.image)}"
+                        alt="${name}"
+                        class="product-detail-img"
+                        loading="lazy"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                    >
+                    <div class="product-page-image-placeholder"
+                         style="display:none;"
+                         role="img"
+                         aria-label="Product image not available">
+                        ${brand}
+                    </div>
+                `;
+            }
+
+            function buyButton(p, large = false) {
+                const url = safeProductLink(p.buyLink);
+
+                if (!url) {
+                    return `
+                        <a href="shop.html"
+                           class="btn btn-outline${large ? " btn-large" : ""}">
+                            Browse Products
+                        </a>
+                    `;
+                }
+
+                return `
+                    <a href="${url}"
+                       target="_blank"
+                       rel="sponsored noopener noreferrer"
+                       class="btn btn-primary${large ? " btn-large" : ""}">
+                        View at Best Buy
+                    </a>
+                `;
+            }
+
+            // Product not found or product data unavailable.
             if (!product) {
+                document.title = "Product Not Found | Safe Home";
+
                 main.innerHTML = `
                     <section class="page-hero">
                         <div class="container">
                             <h1>Product Not Found</h1>
-                            <p>The product you're looking for doesn't exist.</p>
-                            <a href="shop.html" class="btn btn-primary" style="margin-top: 20px;">Back to Shop</a>
+                            <p>
+                                This product is not currently available
+                                in our catalog.
+                            </p>
+                            <a href="shop.html"
+                               class="btn btn-primary"
+                               style="margin-top:20px;">
+                                Browse Products
+                            </a>
                         </div>
                     </section>
                 `;
                 return;
             }
 
-            // Update page title
-            document.title = `${product.name} | Safe Home`;
+            document.title =
+                `${product.name} | Independent Buying Guide | Safe Home`;
 
-            // Build features list HTML
-            const featuresHTML = product.features.map(f => `<li>${f}</li>`).join('');
-            const whyBuyHTML = product.whyBuy.map(w => `<li>${w}</li>`).join('');
+            const metaDescription =
+                document.getElementById("page-description");
 
-            // Build related products (show 3 other products)
-            const allIds = Object.keys(products);
-            const relatedIds = allIds.filter(id => id !== productId).slice(0, 3);
+            if (metaDescription) {
+                metaDescription.setAttribute(
+                    "content",
+                    `Compare ${product.name}. Review compatibility, ` +
+                    `features and subscription conditions with ` +
+                    `independent pre-purchase guidance from Safe Home.`
+                );
+            }
+
+            const featuresHTML = makeList(product.features);
+            const whyBuyHTML = makeList(product.whyBuy);
+
+            // Prefer related products from the same brand.
+            // Then add other catalog products to fill three slots.
+            const allIds = Object.keys(catalog).filter(
+                id => id !== productId
+            );
+
+            const sameBrand = allIds.filter(
+                id => catalog[id].brand === product.brand
+            );
+
+            const otherBrands = allIds.filter(
+                id => catalog[id].brand !== product.brand
+            );
+
+            const relatedIds = [
+                ...sameBrand,
+                ...otherBrands
+            ].slice(0, 3);
+
             const relatedHTML = relatedIds.map(id => {
-                const p = products[id];
+                const p = catalog[id];
+
                 return `
                     <div class="product-card">
-                        <div class="product-brand">${p.brand}</div>
-                        <div class="product-name">${p.name}</div>
-                        <div class="product-price">${p.displayPrice}</div>
-                        <p style="font-size: 0.75rem; color: var(--text-light); margin-bottom: 15px; font-style: italic;">${p.priceNote}</p>
-                        <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-                            <a href="${p.buyLink}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 10px 15px; font-size: 0.9rem;">Buy Now</a>
-                            <a href="product.html?id=${p.id}" class="btn btn-outline" style="padding: 10px 15px; font-size: 0.9rem;">Details</a>
+                        <div class="product-brand">
+                            ${escapeHTML(p.brand)}
+                        </div>
+
+                        <div class="product-name">
+                            ${escapeHTML(p.name)}
+                        </div>
+
+                        <div class="product-price">
+                            ${escapeHTML(p.displayPrice)}
+                        </div>
+
+                        <p class="product-page-related-description">
+                            ${escapeHTML(p.shortDesc)}
+                        </p>
+
+                        <div class="product-page-related-actions">
+                            ${buyButton(p)}
+
+                            <a href="${productDetailLink(p.id)}"
+                               class="btn btn-outline">
+                                Details
+                            </a>
                         </div>
                     </div>
                 `;
-            }).join('');
+            }).join("");
 
-            // Inject full product page
             main.innerHTML = `
-                <!-- Breadcrumb -->
-                <div class="container" style="padding: 20px 20px 0;">
-                    <p style="color: var(--text-light); font-size: 0.9rem;">
-                        <a href="index.html">Home</a> / <a href="shop.html">Shop</a> / <span style="color: var(--secondary);">${product.name}</span>
-                    </p>
-                </div>
 
-                <!-- Product Hero -->
+                <!-- BREADCRUMB -->
+
+                <nav class="container product-page-breadcrumb"
+                     aria-label="Breadcrumb">
+
+                    <a href="index.html">Home</a>
+                    /
+                    <a href="shop.html">Shop</a>
+                    /
+                    <span>
+                        ${escapeHTML(product.name)}
+                    </span>
+
+                </nav>
+
+
+                <!-- PRODUCT DETAIL HERO -->
+
                 <section class="section">
                     <div class="container">
+
                         <div class="product-detail-grid">
+
                             <div class="product-image-box">
-                                <img src="${product.image}" alt="${product.name}" class="product-detail-img">
+                                ${productImage(product)}
                             </div>
+
                             <div class="product-info-box">
-                                <div class="product-brand-tag">${product.brand}</div>
-                                <h1 class="product-detail-title">${product.name}</h1>
-                                <p class="product-detail-desc">${product.shortDesc}</p>
-                                
-                                <div class="product-price-tag">${product.displayPrice}</div>
-                                <p class="price-note">${product.priceNote}</p>
-                                
+
+                                <div class="product-brand-tag">
+                                    ${escapeHTML(product.brand)}
+                                </div>
+
+                                <h1 class="product-detail-title">
+                                    ${escapeHTML(product.name)}
+                                </h1>
+
+                                <p class="product-detail-desc">
+                                    ${escapeHTML(product.shortDesc)}
+                                </p>
+
+                                <div class="product-price-tag">
+                                    ${escapeHTML(product.displayPrice)}
+                                </div>
+
+                                <p class="price-note">
+                                    ${escapeHTML(product.priceNote)}
+                                </p>
+
                                 <div class="product-meta">
-                                    <p><strong>License:</strong> ${product.license}</p>
-                                    <p><strong>Delivery:</strong> ${product.delivery}</p>
+
+                                    <p>
+                                        <strong>Subscription:</strong>
+                                        ${escapeHTML(product.license)}
+                                    </p>
+
+                                    <p>
+                                        <strong>Delivery:</strong>
+                                        ${escapeHTML(product.delivery)}
+                                    </p>
+
                                 </div>
-                                
-                                <div class="product-actions" style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
-                                    <a href="${product.buyLink}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">🛒 Buy Now</a>
-                                    <a href="tel:1234567890" class="btn btn-outline btn-large"> Call Safe Home</a>
+
+                                <div class="product-page-actions">
+
+                                    ${buyButton(product, true)}
+
+                                    <a href="tel:+1234567890"
+                                       class="btn btn-outline btn-large">
+                                        Call Safe Home
+                                    </a>
+
                                 </div>
-                                
-                                <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 15px;">
-                                    Complete your secure purchase on BestBuy.com. Safe Home is an affiliate partner and earns a commission at no extra cost to you.
+
+                                <p class="product-page-note">
+                                    Safe Home provides independent
+                                    pre-purchase product guidance.
+                                    Purchases and payments are
+                                    completed directly through
+                                    Best Buy.
+                                </p>
+
+                                <p class="product-page-note">
+                                    <strong>Affiliate Disclosure:</strong>
+                                    We may earn a commission
+                                    from qualifying purchases
+                                    made through eligible
+                                    retailer links.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <!-- PRODUCT OVERVIEW -->
+
+                <section class="section"
+                         style="background-color:#f1f5f9;">
+
+                    <div class="container">
+
+                        <h2 class="section-title">
+                            Product Overview
+                        </h2>
+
+                        <div class="product-page-guide">
+
+                            <p class="about-text">
+                                ${escapeHTML(product.description)}
+                            </p>
+
+                            <p>
+                                Product specifications and
+                                subscription terms can change.
+                                Confirm the exact details
+                                on the retailer's website
+                                before completing checkout.
+                            </p>
+
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <!-- KEY FEATURES -->
+
+                <section class="section">
+                    <div class="container">
+
+                        <h2 class="section-title">
+                            Features &amp; Important Details
+                        </h2>
+
+                        <p class="section-subtitle">
+                            Review the following points
+                            when comparing this product.
+                            Confirm included features
+                            for your specific edition.
+                        </p>
+
+                        <div class="features-list-box">
+                            <ul>
+                                ${featuresHTML}
+                            </ul>
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <!-- WHY CONSIDER -->
+
+                <section class="section"
+                         style="background-color:#f1f5f9;">
+
+                    <div class="container">
+
+                        <h2 class="section-title">
+                            Why Consider This Product?
+                        </h2>
+
+                        <div class="features-list-box">
+                            <ul>
+                                ${whyBuyHTML}
+                            </ul>
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <!-- COMPATIBILITY -->
+
+                <section class="section">
+                    <div class="container">
+
+                        <h2 class="section-title">
+                            Device Compatibility
+                        </h2>
+
+                        <div class="requirements-box">
+
+                            <p>
+                                <strong>
+                                    Listed compatibility:
+                                </strong>
+                                ${escapeHTML(product.requirements)}
+                            </p>
+
+                            <p class="product-page-note">
+                                Operating-system compatibility
+                                does not guarantee that every
+                                advertised feature is available
+                                on every platform. Check the
+                                current system requirements.
+                            </p>
+
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <!-- PRE-PURCHASE CHECKLIST -->
+
+                <section class="section"
+                         style="background-color:#f1f5f9;">
+
+                    <div class="container">
+
+                        <h2 class="section-title">
+                            Before You Purchase
+                        </h2>
+
+                        <div class="features-grid">
+
+                            <div class="feature-card">
+                                <div class="feature-icon">💻</div>
+                                <h3>Compatibility</h3>
+                                <p>
+                                    Confirm your operating
+                                    system and device meet
+                                    the current requirements.
                                 </p>
                             </div>
+
+                            <div class="feature-card">
+                                <div class="feature-icon">🛡️</div>
+                                <h3>Included Features</h3>
+                                <p>
+                                    Check which security
+                                    or privacy features
+                                    are included in this edition.
+                                </p>
+                            </div>
+
+                            <div class="feature-card">
+                                <div class="feature-icon">📱</div>
+                                <h3>Device Coverage</h3>
+                                <p>
+                                    Verify how many devices
+                                    the subscription covers.
+                                    Platform compatibility
+                                    and device count differ.
+                                </p>
+                            </div>
+
+                            <div class="feature-card">
+                                <div class="feature-icon">💳</div>
+                                <h3>Subscription Terms</h3>
+                                <p>
+                                    Review renewal pricing,
+                                    auto-renewal conditions
+                                    and applicable charges.
+                                </p>
+                            </div>
+
                         </div>
+
                     </div>
                 </section>
 
-                <!-- Description -->
-                <section class="section" style="background-color: #f1f5f9;">
-                    <div class="container">
-                        <h2 class="section-title">Product Overview</h2>
-                        <p class="about-text">${product.description}</p>
-                    </div>
-                </section>
 
-                <!-- Features -->
-                <section class="section">
-                    <div class="container">
-                        <h2 class="section-title">Key Features</h2>
-                        <p class="section-subtitle">Everything included in your license.</p>
-                        <div class="features-list-box">
-                            <ul>${featuresHTML}</ul>
-                        </div>
-                    </div>
-                </section>
+                <!-- CALL CTA -->
 
-                <!-- Why Buy -->
-                <section class="section" style="background-color: #f1f5f9;">
-                    <div class="container">
-                        <h2 class="section-title">Why Buy This Product?</h2>
-                        <div class="features-list-box">
-                            <ul>${whyBuyHTML}</ul>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- System Requirements -->
-                <section class="section">
-                    <div class="container">
-                        <h2 class="section-title">System Requirements</h2>
-                        <div class="requirements-box">
-                            <p><strong>Compatible with:</strong> ${product.requirements}</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- CTA Section -->
                 <section class="cta-section">
                     <div class="container">
-                        <h2>Ready to Get Protected?</h2>
-                        <p>Click below to complete your secure purchase, or call/chat with us if you need help choosing.</p>
-                        <div class="product-actions" style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
-                            <a href="${product.buyLink}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">🛒 Buy Now</a>
-                            <a href="tel:1234567890" class="btn btn-outline btn-large" style="border-color: white; color: white;">📞 Call Safe Home</a>
+
+                        <h2>
+                            Need Help Before Purchasing?
+                        </h2>
+
+                        <p>
+                            Contact Safe Home to discuss
+                            product selection, device
+                            compatibility, features
+                            or subscription comparisons.
+                        </p>
+
+                        <div class="product-page-actions">
+
+                            <a href="tel:+1234567890"
+                               class="btn btn-primary btn-large">
+                                Call Now
+                            </a>
+
+                            <a href="contact.html"
+                               class="btn btn-primary btn-large">
+                                Send an Enquiry
+                            </a>
+
+                            ${buyButton(product, true)}
+
                         </div>
+
+                        <p class="product-page-note">
+                            Safe Home does not provide
+                            software installation,
+                            activation, virus removal
+                            or technical troubleshooting.
+                        </p>
+
                     </div>
                 </section>
 
-                <!-- Related Products -->
+
+                <!-- HOW PURCHASING WORKS -->
+
                 <section class="section">
                     <div class="container">
-                        <h2 class="section-title">Related Products</h2>
+
+                        <h2 class="section-title">
+                            How Purchasing Works
+                        </h2>
+
+                        <div class="features-grid">
+
+                            <div class="feature-card">
+                                <div class="feature-icon">🔍</div>
+                                <h3>1. Compare</h3>
+                                <p>
+                                    Review product information
+                                    and ask Safe Home any
+                                    pre-purchase questions.
+                                </p>
+                            </div>
+
+                            <div class="feature-card">
+                                <div class="feature-icon">🛒</div>
+                                <h3>2. Visit Best Buy</h3>
+                                <p>
+                                    Open the retailer listing
+                                    to confirm current price,
+                                    features and terms.
+                                </p>
+                            </div>
+
+                            <div class="feature-card">
+                                <div class="feature-icon">💳</div>
+                                <h3>3. Complete Checkout</h3>
+                                <p>
+                                    If you choose to purchase,
+                                    complete your transaction
+                                    directly with Best Buy.
+                                </p>
+                            </div>
+
+                            <div class="feature-card">
+                                <div class="feature-icon">📩</div>
+                                <h3>4. Follow Official Instructions</h3>
+                                <p>
+                                    Follow the retailer's
+                                    delivery instructions
+                                    and the manufacturer's
+                                    official setup guidance.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <!-- EDITORIAL AND AFFILIATE DISCLOSURE -->
+
+                <section class="section"
+                         style="background-color:#f1f5f9;">
+
+                    <div class="container">
+
+                        <h2 class="section-title">
+                            About Safe Home's Product Information
+                        </h2>
+
+                        <div class="product-page-guide">
+
+                            <p>
+                                Safe Home organizes product
+                                and retailer information
+                                to help shoppers understand
+                                available security software
+                                options before purchasing.
+                            </p>
+
+                            <p>
+                                Our buying guidance focuses
+                                on product differences,
+                                compatibility, subscription
+                                conditions and practical
+                                selection considerations.
+                                We do not claim to have
+                                independently laboratory-tested
+                                every product.
+                            </p>
+
+                            <div class="product-page-disclosure">
+
+                                <p>
+                                    <strong>
+                                        Independent Website:
+                                    </strong>
+                                    Safe Home is not Norton,
+                                    McAfee, Bitdefender or
+                                    Best Buy, and is not
+                                    an official technical
+                                    support department
+                                    for these companies.
+                                </p>
+
+                                <p>
+                                    <strong>
+                                        Affiliate Disclosure:
+                                    </strong>
+                                    Safe Home may earn a
+                                    commission when visitors
+                                    complete qualifying
+                                    purchases through eligible
+                                    Best Buy referral links.
+                                </p>
+
+                                <p>
+                                    <strong>
+                                        Scope of Assistance:
+                                    </strong>
+                                    We provide pre-purchase
+                                    guidance only. We do not
+                                    sell licenses directly,
+                                    accept retailer payments,
+                                    install software,
+                                    activate subscriptions,
+                                    remove viruses or provide
+                                    technical troubleshooting.
+                                </p>
+
+                                <p>
+                                    For product technical
+                                    support, contact the
+                                    software manufacturer.
+                                    For order, payment or
+                                    return questions,
+                                    contact Best Buy.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <!-- FAQ -->
+
+                <section class="section">
+                    <div class="container">
+
+                        <h2 class="section-title">
+                            Frequently Asked Questions
+                        </h2>
+
+                        <div class="product-page-faq">
+
+                            <details>
+                                <summary>
+                                    Does Safe Home sell
+                                    this product directly?
+                                </summary>
+                                <p>
+                                    No. Safe Home provides
+                                    independent buying guidance
+                                    and retailer referral links.
+                                    Purchases are completed
+                                    directly through Best Buy.
+                                </p>
+                            </details>
+
+                            <details>
+                                <summary>
+                                    Is the displayed price final?
+                                </summary>
+                                <p>
+                                    No price is quoted on this
+                                    page. Check the current
+                                    Best Buy listing for pricing,
+                                    promotions, availability
+                                    and subscription terms.
+                                </p>
+                            </details>
+
+                            <details>
+                                <summary>
+                                    Can I call Safe Home
+                                    before purchasing?
+                                </summary>
+                                <p>
+                                    Yes. You can contact
+                                    Safe Home with questions
+                                    about product selection,
+                                    compatibility, features
+                                    and subscription comparisons.
+                                </p>
+                            </details>
+
+                            <details>
+                                <summary>
+                                    Who handles software
+                                    activation and support?
+                                </summary>
+                                <p>
+                                    Contact the product
+                                    manufacturer's official
+                                    support channels for
+                                    installation, activation,
+                                    account access and
+                                    technical troubleshooting.
+                                </p>
+                            </details>
+
+                            <details>
+                                <summary>
+                                    Who handles refunds
+                                    or order problems?
+                                </summary>
+                                <p>
+                                    Best Buy handles orders
+                                    placed on its website.
+                                    Refunds and returns
+                                    are subject to the
+                                    retailer's applicable
+                                    terms and policies.
+                                </p>
+                            </details>
+
+                            <details>
+                                <summary>
+                                    Does antivirus software
+                                    guarantee complete protection?
+                                </summary>
+                                <p>
+                                    No. Security software
+                                    can help reduce risks,
+                                    but no product guarantees
+                                    protection against every
+                                    online threat.
+                                </p>
+                            </details>
+
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <!-- RELATED PRODUCTS -->
+
+                <section class="section"
+                         style="background-color:#f1f5f9;">
+
+                    <div class="container">
+
+                        <h2 class="section-title">
+                            Related Products
+                        </h2>
+
+                        <p class="section-subtitle">
+                            Compare other featured security
+                            products before making a decision.
+                        </p>
+
                         <div class="products-grid">
                             ${relatedHTML}
                         </div>
+
+                        <div class="product-page-actions">
+                            <a href="shop.html"
+                               class="btn btn-outline">
+                                View All Products
+                            </a>
+                        </div>
+
                     </div>
                 </section>
+
+
+                <!-- FINAL CTA -->
+
+                <section class="cta-section">
+                    <div class="container">
+
+                        <h2>
+                            Ready to Review Your Options?
+                        </h2>
+
+                        <p>
+                            Compare product details,
+                            check the current retailer
+                            listing or contact Safe Home
+                            for pre-purchase assistance.
+                        </p>
+
+                        <div class="product-page-actions">
+
+                            ${buyButton(product, true)}
+
+                            <a href="tel:+1234567890"
+                               class="btn btn-primary btn-large">
+                                Call Safe Home
+                            </a>
+
+                            <a href="contact.html"
+                               class="btn btn-primary btn-large">
+                                Contact Us
+                            </a>
+
+                        </div>
+
+                    </div>
+                </section>
+
             `;
         });
     </script>
+
 </body>
 </html>
