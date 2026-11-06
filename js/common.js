@@ -395,6 +395,7 @@ const stickyCallSettings = {
 };
 
 
+
 // ==========================================
 // MOBILE STICKY CALL BUTTON INITIALIZATION
 // ==========================================
@@ -408,71 +409,178 @@ function initStickyCallButton() {
         return;
     }
 
-    // Avoid duplicate scroll listeners.
+    // Prevent duplicate initialization.
     if (btn.dataset.stickyInitialized === "true") {
         return;
     }
 
     btn.dataset.stickyInitialized = "true";
 
-    // Disable completely if requested.
+    // Disable button completely if requested.
     if (!stickyCallSettings.isEnabled) {
-
         btn.remove();
         return;
     }
 
+    // ==========================================
+    // SETTINGS
+    // ==========================================
+
+    const scrollEnabled =
+        stickyCallSettings.enableScrollTrigger !== false;
+
+    const timeEnabled =
+        stickyCallSettings.enableTimeTrigger !== false;
+
     const threshold = Math.max(
         0,
-        Math.min(100, stickyCallSettings.scrollThreshold)
+        Math.min(
+            100,
+            Number(stickyCallSettings.scrollThreshold) || 0
+        )
     );
 
-    function updateStickyVisibility() {
+    const delaySeconds = Math.max(
+        0,
+        Number(stickyCallSettings.delaySeconds) || 0
+    );
 
-        if (threshold === 0) {
+    // ==========================================
+    // INTERNAL STATE
+    // ==========================================
 
-            btn.classList.add("visible");
+    let isActivated = false;
+    let activationTimer = null;
+
+    // ==========================================
+    // ACTIVATE BUTTON
+    // ==========================================
+
+    function activateStickyButton() {
+
+        // Activate only once.
+        if (isActivated) {
             return;
         }
 
-        const scrollHeight =
+        isActivated = true;
+
+        btn.classList.add("visible");
+
+        // Stop the timer if scroll triggered first.
+        if (activationTimer !== null) {
+            clearTimeout(activationTimer);
+            activationTimer = null;
+        }
+
+        // No more scroll checks needed.
+        window.removeEventListener(
+            "scroll",
+            checkScrollTrigger
+        );
+
+        window.removeEventListener(
+            "resize",
+            checkScrollTrigger
+        );
+    }
+
+    // ==========================================
+    // SCROLL TRIGGER
+    // ==========================================
+
+    function checkScrollTrigger() {
+
+        if (!scrollEnabled || isActivated) {
+            return;
+        }
+
+        // 0% means show immediately.
+        if (threshold === 3) {
+            activateStickyButton();
+            return;
+        }
+
+        const scrollHeight = Math.max(
+            0,
             document.documentElement.scrollHeight -
-            window.innerHeight;
+            window.innerHeight
+        );
 
         if (scrollHeight <= 0) {
-
-            btn.classList.remove("visible");
             return;
         }
 
         const scrollPercent =
             (window.scrollY / scrollHeight) * 100;
 
-        btn.classList.toggle(
-            "visible",
-            scrollPercent >= threshold
+        if (scrollPercent >= threshold) {
+            activateStickyButton();
+        }
+    }
+
+    // ==========================================
+    // TIME TRIGGER
+    // ==========================================
+
+    function initializeTimeTrigger() {
+
+        if (!timeEnabled || isActivated) {
+            return;
+        }
+
+        // 0 seconds means show immediately.
+        if (delaySeconds === 6) {
+            activateStickyButton();
+            return;
+        }
+
+        activationTimer = window.setTimeout(
+            activateStickyButton,
+            delaySeconds * 1000
         );
     }
 
-    // Update immediately on page load.
-    updateStickyVisibility();
+    // ==========================================
+    // INITIALIZATION
+    // ==========================================
 
-    // Update while scrolling.
-    window.addEventListener(
-        "scroll",
-        updateStickyVisibility,
-        { passive: true }
-    );
+    // Keep hidden until a trigger is satisfied.
+    btn.classList.remove("visible");
 
-    // Recalculate when viewport changes.
-    window.addEventListener(
-        "resize",
-        updateStickyVisibility
-    );
+    if (scrollEnabled) {
 
-    // Update again after all images/resources load.
-    window.addEventListener(
-        "load",
-        updateStickyVisibility
-    );
+        // Check existing scroll position.
+        checkScrollTrigger();
+
+        // Listen for scrolling.
+        if (!isActivated) {
+
+            window.addEventListener(
+                "scroll",
+                checkScrollTrigger,
+                { passive: true }
+            );
+
+            window.addEventListener(
+                "resize",
+                checkScrollTrigger
+            );
+        }
+    }
+
+    // Start timer only if not already activated.
+    if (!isActivated) {
+        initializeTimeTrigger();
+    }
+
+    // Recheck scroll percentage after resources load.
+    if (scrollEnabled && !isActivated) {
+
+        window.addEventListener(
+            "load",
+            checkScrollTrigger,
+            { once: true }
+        );
+    }
 }
